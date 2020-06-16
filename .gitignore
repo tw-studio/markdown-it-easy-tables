@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# Include all .env files but not .secrets
+!.env/
+.secrets.js
+
+# self-signed certificates for local https testing
+*.key
+*.crt
+
+# production
+build/
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# misc
+.DS_Store
+todos*.md
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

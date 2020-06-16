@@ -1,0 +1,47 @@
+{
+  "name": "markdown-it-easy-tables",
+  "version": "0.1.0",
+  "description": "Markdown tables with indents. Fast and easy to read and write.",
+  "author": "tw-space",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "jest": "$(yarn bin)/jest --config=test/config/jest.config.js",
+    "test": "$(yarn bin)/jest --config=test/config/jest.config.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^26.0.1",
+    "js-yaml": "^3.14.0",
+    "markdown-it": "^11.0.0",
+    "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "engineStrict": true,
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "indent",
+    "table",
+    "indented table"
+  ],
+  "homepage": "https://github.com/tw-space/markdown-it-easy-tables",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tw-space/markdown-it-easy-tables.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tw-space/markdown-it-easy-tables/issues"
+  }
+}

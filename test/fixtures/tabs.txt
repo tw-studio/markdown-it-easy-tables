@@ -1,0 +1,20 @@
+1: Tab first character after
+.
+foo	  bar
+.
+foo   bar
+.
+
+2: Tab second character after
+.
+foo 	 bar
+.
+foo    bar
+.
+
+3: Tab third character after
+.
+foo  	bar
+.
+foo   bar
+.

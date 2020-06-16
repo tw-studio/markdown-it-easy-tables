@@ -1,0 +1,918 @@
+---
+1: Simple, 2x3+H
+2: No Header, 3x2
+3: Varied Column spacing
+4: One dash header separators
+5: Separator dashes can be arbitrarily long
+6: Nested inline formatting
+7: Minimal one-column with header
+8: Minimal one-column without header
+9: Bullet & dash are text
+10: Second line, as separator, should only contain "-", ":", " "
+11: Allow tab characters as whitespace
+12: Preceding paragraph is separate
+13: Header row with empty body ok
+14: Spaces and colons within separator lines are ignored
+15: Columns must be separated by 2+ space buffer all the way down
+16: Delimiter escaping
+17: Backtick ranges are inline code except when spanning columns
+18: Unclosed backticks don't count
+19: `\` in tables should not count as escaped backtick
+20: Tables should handle escaped backticks
+21: Allow indented tables
+22: Leading spaces in all rows are treated as content
+23: Align row must have separators in every column
+
+Z1: Column alignment requires three characters minimum
+Z2: Nested inline formatting with aligned columns
+Z3: First row determines columns also with headers
+Z4: Allow one-column tables with alignment
+---
+
+
+Simple, 2x3+H
+.
+```table
+Heading 1   Heading 2
+---------   ---------
+Cell 1      Cell 2
+Cell 3      Cell 4
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+</tr>
+<tr>
+<td>Cell 3</td>
+<td>Cell 4</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+No Header, 3x2 
+.
+```table
+Cell 1  Cell 2  Cell 3
+Cell 4  Cell 5  Cell 6
+```
+.
+<table>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 4</td>
+<td>Cell 5</td>
+<td>Cell 6</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Variable spacing between columns (always 2+)
+.
+```table
+Heading 1   Heading 2       Heading 3
+---------   ---------       ---------
+Cell 1      Cell 2          Cell 3
+Cell 4      Cell 5          Cell 6
+Cell 7      Cell 8          Cell 9
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+<th>Heading 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 4</td>
+<td>Cell 5</td>
+<td>Cell 6</td>
+</tr>
+<tr>
+<td>Cell 7</td>
+<td>Cell 8</td>
+<td>Cell 9</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Only one dash required beneath each Heading row
+.
+```table
+Heading 1   Heading 2       Heading 3
+-           -----------     -
+Cell 1      Cell 2          Cell 3
+Cell 4      Cell 5          Cell 6
+Cell 7      Cell 8          Cell 9
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+<th>Heading 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 4</td>
+<td>Cell 5</td>
+<td>Cell 6</td>
+</tr>
+<tr>
+<td>Cell 7</td>
+<td>Cell 8</td>
+<td>Cell 9</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Separator dash count can be arbitrarily long
+.
+```table
+Heading 1   Heading 2                           Heading 3
+-           -------------------------------     ---------------------------
+Cell 1      Cell 2                              Cell 3
+Cell 4      Cell 5                              Cell 6
+Cell 7      Cell 8                              Cell 9
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+<th>Heading 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+<td>Cell 3</td>
+</tr>
+<tr>
+<td>Cell 4</td>
+<td>Cell 5</td>
+<td>Cell 6</td>
+</tr>
+<tr>
+<td>Cell 7</td>
+<td>Cell 8</td>
+<td>Cell 9</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Nested inline formatting
+.
+```table
+Header 1    Header 2     *Header 3*   Header 4
+---         -            -----        --------
+Cell 1      **Cell 2**   Cell 3       _Cell 4_
+*Cell 5*    Cell 6       Cell 7       Cell 8
+```
+.
+<table>
+<thead>
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+<th><em>Header 3</em></th>
+<th>Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td><strong>Cell 2</strong></td>
+<td>Cell 3</td>
+<td><em>Cell 4</em></td>
+</tr>
+<tr>
+<td><em>Cell 5</em></td>
+<td>Cell 6</td>
+<td>Cell 7</td>
+<td>Cell 8</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Minimal one-column with header
+.
+```table
+foo
+--
+test2
+```
+.
+<table>
+<thead>
+<tr>
+<th>foo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test2</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Minimal one-column without header
+.
+```table
+foo
+test2
+```
+.
+<table>
+<tbody>
+<tr>
+<td>foo</td>
+</tr>
+<tr>
+<td>test2</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Bullet & dash are text
+.
+```table
+- foo    foo
+-        --
+bar      • bar
+```
+.
+<table>
+<thead>
+<tr>
+<th>- foo</th>
+<th>foo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bar</td>
+<td>• bar</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Second line, as a separator line, should not contain symbols except "-", ":", and " "
+.
+```table
+foo    foo
+---    -----s
+bar    bar
+```
+.
+<table>
+<tbody>
+<tr>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>---</td>
+<td>-----s</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Allow tab characters as whitespace
+.
+```table
+foo   bar
+---   ---
+baz 	quux
+```
+.
+<table>
+<thead>
+<tr>
+<th>foo</th>
+<th>bar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baz</td>
+<td>quux</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Preceding paragraph is separate
+.
+paragraph
+```table
+foo   foo
+---   ------
+bar   bar
+```
+.
+<p>paragraph</p>
+<table>
+<thead>
+<tr>
+<th>foo</th>
+<th>foo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bar</td>
+<td>bar</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Header row with empty body ok
+.
+```table
+foo   foo
+-     --
+```
+paragraph
+.
+<table>
+<thead>
+<tr>
+<th>foo</th>
+<th>foo</th>
+</tr>
+</thead>
+</table>
+<p>paragraph</p>
+.
+
+
+Spaces and colons within separator lines are ignored
+.
+```table
+foobarbaz   foo
+-:-   :--   ---
+alongword   bar
+```
+.
+<table>
+<thead>
+<tr>
+<th>foobarbaz</th>
+<th>foo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alongword</td>
+<td>bar</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+First row determines number and position of columns. Leading whitespace saved, trailing whitespace trimmed.
+.
+```table
+1   2
+3         4
+    5       6
+7     
+   89
+```
+.
+<table>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>      4</td>
+</tr>
+<tr>
+<td></td>
+<td>5       6</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>   8</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+First row determines columns
+.
+```table
+1   2       3    4
+:-: 
+3         4
+    5       6
+7     
+   89
+```
+.
+<table>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>:-:</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>      4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>   8</td>
+<td>9</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Later rows without space separation are split
+.
+```table
+foo   bar
+-     ---
+alongword
+```
+.
+<table>
+<thead>
+<tr>
+<th>foo</th>
+<th>bar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alongw</td>
+<td>ord</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Delimiter escaping
+.
+```table
+Heading 1 \\\\  Heading 2
+---------       ----
+Cell\`\1\ One     Cell\2
+\ Cell\\\3      \\ Cell\4
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1 \\</th>
+<th>Heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell`\1\ One</td>
+<td>  Cell\2</td>
+</tr>
+<tr>
+<td>\ Cell\\3</td>
+<td>\ Cell\4</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Backtick ranges are inline code except when spanning columns
+.
+```table
+Heading 1  Heading 2
+---------  ---------
+`Cell 1`   Cell 2
+`Cell 3    `Cell 4
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Cell 1</code></td>
+<td>Cell 2</td>
+</tr>
+<tr>
+<td>`Cell 3</td>
+<td>`Cell 4</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Unclosed backticks don't count
+.
+```table
+Heading 1    Heading 2
+---------    ---------
+Cell 1       Cell 2
+`Cell 3      Cell 4
+```
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+</tr>
+<tr>
+<td>`Cell 3</td>
+<td>Cell 4</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+`\` in tables should not count as escaped backtick
+.
+```table
+#  1    2
+-  -    -
+x  `\`  `x`
+```
+.
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td><code>\</code></td>
+<td><code>x</code></td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Tables should handle escaped backticks
+.
+```table
+#   1      2
+--  -      --
+x   \`\`   `x`
+```
+.
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>``</td>
+<td><code>x</code></td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Allow indented tables
+.
+  ```table
+  Col1a     Col2a
+  -----     -----
+  Col1b     Col2b
+  ```
+.
+<table>
+<thead>
+<tr>
+<th>Col1a</th>
+<th>Col2a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Col1b</td>
+<td>Col2b</td>
+</tr>
+</tbody>
+</table>
+.
+
+Leading spaces are bad. Separator lines especially must exist at index 0.
+.
+```table
+      Col1a   Col2a  
+    -----   -----  
+    Col1b   Col2b  
+```
+.
+<table>
+<tbody>
+<tr>
+<td>      Col1a</td>
+<td>Col2a</td>
+</tr>
+<tr>
+<td>    -----   --</td>
+<td>---</td>
+</tr>
+<tr>
+<td>    Col1b   Co</td>
+<td>l2b</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Align row must have separators in every column
+.
+```table
+Col1a   Col1b   Col1c
+-----   -----
+Col2a   Col2b   Col2c
+```
+.
+<table>
+<tbody>
+<tr>
+<td>Col1a</td>
+<td>Col1b</td>
+<td>Col1c</td>
+</tr>
+<tr>
+<td>-----</td>
+<td>-----</td>
+<td></td>
+</tr>
+<tr>
+<td>Col2a</td>
+<td>Col2b</td>
+<td>Col2c</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Empty table
+.
+```table
+```
+.
+.
+
+
+One newline
+.
+```table
+
+```
+.
+.
+
+
+Multiple newlines
+.
+```table
+
+
+
+```
+.
+.
+
+
+Newlines interspersed, header
+.
+```table
+foo   bar   baz
+-     --    -----
+one   two   three
+
+four  five  six
+
+```
+.
+<table>
+<thead>
+<tr>
+<th>foo</th>
+<th>bar</th>
+<th>baz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>one</td>
+<td>two</td>
+<td>three</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>four</td>
+<td>five</td>
+<td>six</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Newlines interspersed, no header
+.
+```table
+foo   bar   baz
+
+one   two   three
+
+
+four  five  six
+
+```
+.
+<table>
+<tbody>
+<tr>
+<td>foo</td>
+<td>bar</td>
+<td>baz</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>one</td>
+<td>two</td>
+<td>three</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>four</td>
+<td>five</td>
+<td>six</td>
+</tr>
+</tbody>
+</table>
+.
+
+Simple, 2x3+H, fenced by ~
+.
+~~~table
+Heading 1   Heading 2
+---------   ---------
+Cell 1      Cell 2
+Cell 3      Cell 4
+~~~
+.
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell 1</td>
+<td>Cell 2</td>
+</tr>
+<tr>
+<td>Cell 3</td>
+<td>Cell 4</td>
+</tr>
+</tbody>
+</table>
+.
+
+

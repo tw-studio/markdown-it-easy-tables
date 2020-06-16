@@ -1,0 +1,281 @@
+---
+Z1: Column alignment requires three characters minimum
+Z2: Nested inline formatting with aligned columns
+Z3: First row determines columns also with headers
+Z4: Allow one-column tables with alignment
+Z5: Bullet & dash are text with alignment
+---
+
+All column alignments
+.
+```table
+Header 1  Header 2   Header 3  Header 4
+:------:  -------:   :-------  --------
+Cell 1    Cell 2     Cell 3    Cell 4  
+Cell 5    Cell 6     Cell 7    Cell 8  
+```
+.
+<table>
+<thead>
+<tr>
+<th align="center" style="text-align:center">Header 1</th>
+<th align="right" style="text-align:right">Header 2</th>
+<th align="left" style="text-align:left">Header 3</th>
+<th>Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" style="text-align:center">Cell 1</td>
+<td align="right" style="text-align:right">Cell 2</td>
+<td align="left" style="text-align:left">Cell 3</td>
+<td>Cell 4</td>
+</tr>
+<tr>
+<td align="center" style="text-align:center">Cell 5</td>
+<td align="right" style="text-align:right">Cell 6</td>
+<td align="left" style="text-align:left">Cell 7</td>
+<td>Cell 8</td>
+</tr>
+</tbody>
+</table>
+.
+
+Right align underlines with different lengths
+.
+```table
+Header 1  Header 2   Header 3     Header 4
+-------:  -:         ------------:----:
+Cell 1    Cell 2     Cell 3       Cell 4  
+Cell 5    Cell 6     Cell 7       Cell 8  
+```
+.
+<table>
+<thead>
+<tr>
+<th align="right" style="text-align:right">Header 1</th>
+<th align="right" style="text-align:right">Header 2</th>
+<th align="right" style="text-align:right">Header 3</th>
+<th align="right" style="text-align:right">Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right" style="text-align:right">Cell 1</td>
+<td align="right" style="text-align:right">Cell 2</td>
+<td align="right" style="text-align:right">Cell 3</td>
+<td align="right" style="text-align:right">Cell 4</td>
+</tr>
+<tr>
+<td align="right" style="text-align:right">Cell 5</td>
+<td align="right" style="text-align:right">Cell 6</td>
+<td align="right" style="text-align:right">Cell 7</td>
+<td align="right" style="text-align:right">Cell 8</td>
+</tr>
+</tbody>
+</table>
+.
+
+Center align underlines with different lengths
+.
+```table
+Header 1  Header 2   Header 3     Header 4
+:------:  :          :-----------:::
+Cell 1    Cell 2     Cell 3       Cell 4  
+Cell 5    Cell 6     Cell 7       Cell 8  
+```
+.
+<table>
+<thead>
+<tr>
+<th align="center" style="text-align:center">Header 1</th>
+<th align="center" style="text-align:center">Header 2</th>
+<th align="center" style="text-align:center">Header 3</th>
+<th align="center" style="text-align:center">Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" style="text-align:center">Cell 1</td>
+<td align="center" style="text-align:center">Cell 2</td>
+<td align="center" style="text-align:center">Cell 3</td>
+<td align="center" style="text-align:center">Cell 4</td>
+</tr>
+<tr>
+<td align="center" style="text-align:center">Cell 5</td>
+<td align="center" style="text-align:center">Cell 6</td>
+<td align="center" style="text-align:center">Cell 7</td>
+<td align="center" style="text-align:center">Cell 8</td>
+</tr>
+</tbody>
+</table>
+.
+
+Left align underlines with different lengths
+.
+```table
+Header 1  Header 2   Header 3     Header 4
+:-------  :-         :------------:----
+Cell 1    Cell 2     Cell 3       Cell 4  
+Cell 5    Cell 6     Cell 7       Cell 8  
+```
+.
+<table>
+<thead>
+<tr>
+<th align="left" style="text-align:left">Header 1</th>
+<th align="left" style="text-align:left">Header 2</th>
+<th align="left" style="text-align:left">Header 3</th>
+<th align="left" style="text-align:left">Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" style="text-align:left">Cell 1</td>
+<td align="left" style="text-align:left">Cell 2</td>
+<td align="left" style="text-align:left">Cell 3</td>
+<td align="left" style="text-align:left">Cell 4</td>
+</tr>
+<tr>
+<td align="left" style="text-align:left">Cell 5</td>
+<td align="left" style="text-align:left">Cell 6</td>
+<td align="left" style="text-align:left">Cell 7</td>
+<td align="left" style="text-align:left">Cell 8</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Nested inline formatting with aligned columns
+.
+```table
+Header 1    Header 2     *Header 3*   Header 4
+:--         :-:          ----:        --------
+Cell 1      **Cell 2**   Cell 3       _Cell 4_
+*Cell 5*    Cell 6       Cell 7       Cell 8
+```
+.
+<table>
+<thead>
+<tr>
+<th align="left" style="text-align:left">Header 1</th>
+<th align="center" style="text-align:center">Header 2</th>
+<th align="right" style="text-align:right"><em>Header 3</em></th>
+<th>Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" style="text-align:left">Cell 1</td>
+<td align="center" style="text-align:center"><strong>Cell 2</strong></td>
+<td align="right" style="text-align:right">Cell 3</td>
+<td><em>Cell 4</em></td>
+</tr>
+<tr>
+<td align="left" style="text-align:left"><em>Cell 5</em></td>
+<td align="center" style="text-align:center">Cell 6</td>
+<td align="right" style="text-align:right">Cell 7</td>
+<td>Cell 8</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+First row determines columns, with headers
+.
+```table
+1   2       3    4
+:-: -------::----:-----:
+3         4
+    5       6
+7     
+   89
+```
+.
+<table>
+<thead>
+<tr>
+<th align="center" style="text-align:center">1</th>
+<th align="right" style="text-align:right">2</th>
+<th align="left" style="text-align:left">3</th>
+<th align="center" style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" style="text-align:center">3</td>
+<td align="right" style="text-align:right">      4</td>
+<td align="left" style="text-align:left"></td>
+<td align="center" style="text-align:center"></td>
+</tr>
+<tr>
+<td align="center" style="text-align:center"></td>
+<td align="right" style="text-align:right">5</td>
+<td align="left" style="text-align:left">6</td>
+<td align="center" style="text-align:center"></td>
+</tr>
+<tr>
+<td align="center" style="text-align:center">7</td>
+<td align="right" style="text-align:right"></td>
+<td align="left" style="text-align:left"></td>
+<td align="center" style="text-align:center"></td>
+</tr>
+<tr>
+<td align="center" style="text-align:center">   8</td>
+<td align="right" style="text-align:right">9</td>
+<td align="left" style="text-align:left"></td>
+<td align="center" style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Allow one-column tables with alignment
+.
+```table
+foo
+:-----:
+bar
+```
+.
+<table>
+<thead>
+<tr>
+<th align="center" style="text-align:center">foo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center" style="text-align:center">bar</td>
+</tr>
+</tbody>
+</table>
+.
+
+
+Bullets & dashes are text
+.
+```table
+- foo    foo
+-        --:
+bar      * bar
+```
+.
+<table>
+<thead>
+<tr>
+<th>- foo</th>
+<th align="right" style="text-align:right">foo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bar</td>
+<td align="right" style="text-align:right">* bar</td>
+</tr>
+</tbody>
+</table>
+.
