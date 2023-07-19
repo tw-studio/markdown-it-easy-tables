@@ -1,8 +1,8 @@
 # Third-Party Software Notices and Information
 
 This project incorporates components from the projects listed below. 
-The original copyright notices and the licenses under which *tw-space* received such components are set forth below.
-*tw-space* reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
+The original copyright notices and the licenses under which *tw-studio* received such components are set forth below.
+*tw-studio* reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
 1.  [markdown-it/markdown-it-testgen version 0.1.6](https://github.com/markdown-it/markdown-it-testgen) (https://github.com/markdown-it/markdown-it-testgen)
 2.  [manastalukdar/markdown-it-textual-uml version 0.1.3](https://github.com/manastalukdar/markdown-it-textual-uml) (https://github.com/manastalukdar/markdown-it-textual-uml)
